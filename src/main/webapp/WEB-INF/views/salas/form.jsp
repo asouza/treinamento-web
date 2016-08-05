@@ -8,13 +8,13 @@
 		<div>
 			<label>
 				Sala
-				<input type="number" name="numero"/>
+				<input type="number" name="numero" value="${sala.getNumero()}"/>${erros.getFieldError("numero").getDefaultMessage()}
 			</label>
 		</div>
 		<div>
 			<label>
 				Quantidade de computadores
-				<input type="number" name="quantidadeComputadores"/>
+				<input type="number" name="quantidadeComputadores" value="${sala.getQuantidadeComputadores()}"/>${erros.getFieldError("quantidadeComputadores").getDefaultMessage()}
 			</label>
 		</div>
 		<input type="submit" value="gravar"/>		

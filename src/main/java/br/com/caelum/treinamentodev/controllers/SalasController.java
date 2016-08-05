@@ -1,6 +1,10 @@
 package br.com.caelum.treinamentodev.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.caelum.treinamentodev.models.Sala;
@@ -14,9 +18,15 @@ public class SalasController {
 	}
 	
 	@RequestMapping("/nova/sala")
-	public String cria(Sala sala){
-		System.out.println(sala);
+	public String cria(@Valid Sala sala,BindingResult bindingResult,Model model){
 		
-		return "salas/form";
+		if(bindingResult.hasErrors()){			
+			model.addAttribute("erros", bindingResult);
+			model.addAttribute("sala", sala);
+			
+			return "salas/form";
+		}
+		
+		return "salas/cadastro-ok";
 	}
 }
