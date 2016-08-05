@@ -1,6 +1,6 @@
-#Some setup information :).
-
-##Spring JPA Setup
-You need to change the **application.properties** and configure the login, password and url of your database. 
+#Passos para importação
+	* Faça o clone do projeto
+	* Importe no eclipse como Maven Project
+	* Rode a classe Boot
   	
 
