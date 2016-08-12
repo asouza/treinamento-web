@@ -1,29 +1,34 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cadastro de computadores</title>
 </head>
 <body>
-	<form action="/novo/computador" method="post">
+	<form:form action="/novo/computador" method="post" modelAttribute="computador">
 		<div>
 			<label>
 				Número de Série
-				<input type="text" name="numeroDeSerie" value="${sala.getNumeroDeSerie()}"/>${erros.getFieldError("numeroDeSerie").getDefaultMessage()}
+				<form:input type="text" path="numeroDeSerie"/>
+				<form:errors path="numeroDeSerie"/> 
 			</label>
 		</div>
 		<div>
 			<label>
 				Configuração
-				<input type="text" name="configuracao" value="${sala.getConfiguracao()}"/>${erros.getFieldError("configuracao").getDefaultMessage()}
+				<form:input type="text" path="configuracao"/>
+				<form:errors path="configuracao"/> 
 			</label>
 		</div>
 		<div>
 			<label>
 				Observação
-				<input type="text" name="observacao" value="${sala.getObservacao()}"/>${erros.getFieldError("observacao").getDefaultMessage()}
+				<form:input type="text" path="observacao"/>
+				<form:errors path="observacao"/> 
 			</label>
 		</div>
 		<input type="submit" value="gravar"/>		
-	</form>
+	</form:form>
 </body>
 </html>

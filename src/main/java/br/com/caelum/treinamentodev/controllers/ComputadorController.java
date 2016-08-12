@@ -13,7 +13,7 @@ import br.com.caelum.treinamentodev.models.Computador;
 public class ComputadorController {
 
 	@RequestMapping("/computador/form")
-	public String form() {
+	public String form(Computador computador) {
 		return "computador/form";
 	}
 
@@ -21,10 +21,7 @@ public class ComputadorController {
 	public String cria(@Valid Computador computador, BindingResult bindingResult, Model model) {
 
 		if (bindingResult.hasErrors()) {
-			model.addAttribute("erros", bindingResult);
-			model.addAttribute("computador", computador);
-
-			return "computador/form";
+			return form(computador) ;
 		}
 		System.out.println(computador);
 		return "salas/cadastro-ok";
