@@ -26,7 +26,6 @@ public class SalasController {
 			
 			return "salas/form";
 		}
-		
 		return "salas/cadastro-ok";
 	}
 }

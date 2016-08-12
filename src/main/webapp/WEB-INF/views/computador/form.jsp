@@ -8,19 +8,19 @@
 		<div>
 			<label>
 				Número de Série
-				<input type="text" name="numeroDeSerie"/>
+				<input type="text" name="numeroDeSerie" value="${sala.getNumeroDeSerie()}"/>${erros.getFieldError("numeroDeSerie").getDefaultMessage()}
 			</label>
 		</div>
 		<div>
 			<label>
 				Configuração
-				<input type="text" name="configuracao"/>
+				<input type="text" name="configuracao" value="${sala.getConfiguracao()}"/>${erros.getFieldError("configuracao").getDefaultMessage()}
 			</label>
 		</div>
 		<div>
 			<label>
 				Observação
-				<input type="text" name="observacao"/>
+				<input type="text" name="observacao" value="${sala.getObservacao()}"/>${erros.getFieldError("observacao").getDefaultMessage()}
 			</label>
 		</div>
 		<input type="submit" value="gravar"/>		

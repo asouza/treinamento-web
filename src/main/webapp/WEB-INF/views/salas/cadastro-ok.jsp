@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Computador cadastrado
+	Informações cadastradas
 </body>
 </html>
