@@ -1,23 +1,27 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cadastro de salas</title>
 </head>
 <body>
-	<form action="/nova/sala" method="post">
+	<form:form action="/nova/sala" method="post" modelAttribute="sala">
 		<div>
 			<label>
 				Sala
-				<input type="number" name="numero" value="${sala.getNumero()}"/>${erros.getFieldError("numero").getDefaultMessage()}
+				
+				<form:input type="number" path="numero"/>
+				<form:errors path="numero"/>
 			</label>
 		</div>
 		<div>
 			<label>
-				Quantidade de computadores
-				<input type="number" name="quantidadeComputadores" value="${sala.getQuantidadeComputadores()}"/>${erros.getFieldError("quantidadeComputadores").getDefaultMessage()}
+			    <form:input type="number" path="quantidadeComputadores"/>
+				<form:errors path="quantidadeComputadores"/>
 			</label>
 		</div>
 		<input type="submit" value="gravar"/>		
-	</form>
+	</form:form>
 </body>
 </html>

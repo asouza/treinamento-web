@@ -13,18 +13,15 @@ import br.com.caelum.treinamentodev.models.Sala;
 public class SalasController {
 
 	@RequestMapping("/salas/form")
-	public String form() {
+	public String form(Sala sala) {
 		return "salas/form";
 	}
 	
 	@RequestMapping("/nova/sala")
 	public String cria(@Valid Sala sala,BindingResult bindingResult,Model model){
 		
-		if(bindingResult.hasErrors()){			
-			model.addAttribute("erros", bindingResult);
-			model.addAttribute("sala", sala);
-			
-			return "salas/form";
+		if(bindingResult.hasErrors()){					
+			return form(sala);
 		}
 		return "salas/cadastro-ok";
 	}
